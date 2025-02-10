@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff0f6;
+    margin: 0;
+    font-family: 'Georgia', serif;
+}
+
+.container {
+    position: relative;
+}
+
+.envelope {
+    position: relative;
+    width: 320px;
+    height: 220px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.envelope.open {
+    transform: translateY(-50px);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-bottom: 110px solid #ff6b81;
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+}
+
+.envelope.open .flap {
+    transform: rotateX(180deg);
+}
+
+.body {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 320px;
+    height: 110px;
+    background-color: #ff6b81;
+    border-radius: 10px;
+}
+
+.letter {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    width: 280px;
+    height: 200px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+    border-radius: 5px;
+}
+
+.envelope.open .letter {
+    transform: scaleY(1);
+}
+
+h1 {
+    font-size: 22px;
+    color: #ff3b6f;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Flower Decorations */
+.flower {
+    position: absolute;
+    width: 50px;
+}
+
+.flower1 {
+    top: -40px;
+    left: -40px;
+    transform: rotate(-15deg);
+}
+
+.flower2 {
+    top: -40px;
+    right: -40px;
+    transform: rotate(15deg);
+}
+
+.flower3 {
+    bottom: -40px;
+    left: -40px;
+    transform: rotate(15deg);
+}
+
+.flower4 {
+    bottom: -40px;
+    right: -40px;
+    transform: rotate(-15deg);
+}
