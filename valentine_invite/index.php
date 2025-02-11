@@ -1,40 +1,23 @@
-<?php
-    // Define sender and receiver names
-    $receiver = "Juliet ❤️";
-    $sender = "Romeo";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Surprise</title>
+    <title>Valentine's Invitation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <!-- Floating Flowers & Hearts -->
-        <img src="flower1.png" class="floating flower1">
-        <img src="flower1.png" class="floating flower2">
-        <img src="heart.png" class="floating heart1">
-        <img src="heart.png" class="floating heart2">
+        <h1>💌 Send a Valentine's Invitation 💌</h1>
+        <form action="message.php" method="POST">
+            <label for="receiver">Receiver's Name:</label>
+            <input type="text" id="receiver" name="receiver" required>
 
-        <div class="envelope" onclick="toggleEnvelope()">
-            <div class="flap"></div>
-            <div class="body"></div>
-            <div class="letter">
-                <h1>Will You Be My Valentine?</h1>
-                <p>Dear <strong><?php echo $receiver; ?></strong>,</p>
-                <p>Every day with you is a dream come true. Will you be my Valentine forever?</p>
-                <p>With all my heart, <br> <strong><?php echo $sender; ?></strong> ❤️</p>
-            </div>
-        </div>
+            <label for="sender">Your Name:</label>
+            <input type="text" id="sender" name="sender" required>
+
+            <button type="submit">Send Invitation 💖</button>
+        </form>
     </div>
-
-    <script>
-        function toggleEnvelope() {
-            document.querySelector('.envelope').classList.toggle('open');
-        }
-    </script>
 </body>
 </html>
